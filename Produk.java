@@ -15,7 +15,14 @@ public class Produk {
     public String getnama() { return nama; }
     public double getharga() { return harga; }
     public int getstok() { return stok; }
-    
+
+    public void setHarga(double harga) {
+        this.harga = harga;
+    }
+    public void setStok(int stok) {
+        this.stok = stok;
+    }
+
     public void tampilInfo() {
         System.out.println("Produk  : " + nama);
         System.out.println("Kategori: " + Kategori);
