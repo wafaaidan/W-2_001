@@ -1,10 +1,12 @@
-import base.Produk;
-
 public class Main {
     public static void main(String[] args) {
-        Produk p = new Produk("Indomie Goreng", 3500, 100, "Makanan");
+        Produk p = new Produk("Ninjago", 15.0, 75, "lego");
 
-        p.tampilInfo(); //public mothod
+        System.out.println(p.getnama());
+        System.out.println(p.getharga());
+
+        p.setHarga(49.75);
+        System.out.println(p.getharga());
     }
     
 }
