@@ -12,7 +12,7 @@ public class makanan extends Produk {
     }
     public void setExpired(int expired){
         if(expired < 0) {
-            System.out.println("Masa Expired tidak boleh kurang dari 1");
+            System.out.println("Masa Expired tidak boleh kurang dari 0");
         } else{
             this.expired = expired;
         }
