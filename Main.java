@@ -3,7 +3,7 @@ public class Main {
         elektronik mesinCuci = new elektronik("sharp", 249.99, 24, "alat rumah tangga", 5 );
 
         mesinCuci.setGaransi(4);
-        mesinCuci.tampilData();
+        mesinCuci.tampilInfo();
         
     }
     
