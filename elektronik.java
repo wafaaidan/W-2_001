@@ -1,25 +1,35 @@
 public class elektronik extends Produk {
-    private int garansi;
-    public elektronik(String nama, double harga, int stok, String Kategori, int garansi) {
-        super(nama, harga, stok, Kategori);
-        this.garansi = garansi;
+    private String merek;
+    private int garansiTahun;
+    private static final double PPN = 0.11;
+
+    public elektronik(String nama, String merek, double harga, int stok, int garansiTahun) {
+        super(nama, harga, stok);
+        this.merek = merek;
+        this.garansiTahun = garansiTahun;
     }
+
+    public String getMerek(){
+        return merek;
+    }
+    public int getGaransiTahun(){
+        return garansiTahun;
+    }
+    //overriding tampilInfo()
     @Override
     public void tampilInfo(){
-        System.out.println("Elektronik");
+        System.out.println("[Elektronik]");
         // super.tampilInfo();
-        System.out.println("Produk  : " + getnama());
-        System.out.println("Kategori: " + Kategori);
-        System.out.println("Harga   : " + getharga());
-        System.out.println("Stok    : " + getstok());
+        System.out.println("Nama    : " + getnama());
+        System.out.println("Merek   : " + merek);
+        System.out.println("Garansi : " + garansiTahun + "tahun");
         System.out.println("---------------------");
-        System.out.println("Masa Expire Garansi:" + garansi + "tahun");
     }
-    public void setGaransi(int garansi){
-        if(garansi <= 0) {
+    public void setGaransi(int garansiTahun){
+        if(garansiTahun <= 0) {
             System.out.println("Masa Expired Garansi tidak boleh kurang dari 0");
         } else{
-            this.garansi = garansi;
+            this.garansiTahun = garansiTahun;
         }
     }
     
