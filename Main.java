@@ -31,8 +31,28 @@ public class Main {
     System.out.println("Pajak   : Rp." + pajakHpCustom);
     System.out.println("Total   : Rp." + hp.hitungTotalHarga(2)+pajakHpCustom);
         
-  
-        
+    //-Overloading hitungDiskon()
+    System.out.println("=== Rincian Hitung Diskon Makanan ===");
+
+    //1 - diskon default jika beli >= 10
+
+    System.out.println("Indomie x10 (Diskon Otomatis 15%)");
+    System.out.println("Subtotal    : Rp." + indomie.hitungTotalHarga(1));
+    System.out.println("Pajak   : Rp." + indomie.hitungDiskon(10));
+    System.out.println("Total   : Rp." + indomie.hitungHargaSetelahDiskon(10));
+    
+    //2 - diskon custom 15% (Promo Spesial)
+    System.out.println("Roti x5 (diskon custom 15%)");
+    System.out.println("Subtotal    : Rp." + roti.hitungTotalHarga(5));
+    System.out.println("Pajak   : Rp." + roti.hitungDiskon(5, 15));
+    System.out.println("Total   : Rp." + roti.hitungHargaSetelahDiskon(5) - roti.hitungDiskon(5,15));
+    
+    //- transaksi - 
+    System.out.println("=== Transaksi ===");
+    laptop.beli(1);
+    hp.beli(2);
+    indomie.beli(10);
+    roti.beli(5);
     }
     
 }
