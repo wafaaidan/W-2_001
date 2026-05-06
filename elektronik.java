@@ -33,9 +33,20 @@ public class elektronik extends Produk {
         }
     }
     
+    //Overloading hitungPajak()
+
+    //1 - pajak standar ppn 11%
+    public double hitungDiskon(int jumlahBeli) {
+        return hitungTotalHarga(jumlahBeli) * PPN;
+    }
+
+    //2 - pajak custom
+    public double hitungDiskon(int jumlahBeli, double persenPajak){
+        return hitungTotalHarga(jumlahBeli) + hitungPajak(jumlahBeli);
+    }
     @Override
     public double hitungPajak(double harga){
-        return harga=0.20;
+        return harga = 0.20;
     }
 }
 
