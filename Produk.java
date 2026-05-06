@@ -34,7 +34,7 @@ abstract class Produk {
 
         }
         if (jumlahBeli > stok) {
-            System.out.println(("Stok" + nama + "tidak cukup"));
+            System.out.println(("Stok" + nama + "tidak cukup, tersisa " + stok));
             return;
         }
         stok -= jumlahBeli;
