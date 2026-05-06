@@ -2,15 +2,18 @@
 
 public class makanan extends Produk {
     private int expired;
-    public makanan(String nama, double harga, int stok, int expired) {
-        super(nama, harga, stok, nama);
+    public makanan(String nama, double harga, int stok, String Kategori, int expired) {
+        super(nama, harga, stok, Kategori);
         this.expired = expired;
     }
     // @Override
     //abstrak + override adalah untuk bentuk yang berbeda dengan wajib menerapkan menggunakan method
     public void tampilInfo(){
         System.out.println("Makanan");
-        // super.tampilInfo();
+        System.out.println("Produk  : " + getnama());
+        System.out.println("Kategori: " + Kategori);
+        System.out.println("Harga   : " + getharga());
+        System.out.println("Stok    : " + getstok());
         System.out.println("---------------------");
         System.out.println("Masa Expired:" + expired + "hari");
     }
@@ -34,6 +37,7 @@ public class makanan extends Produk {
     }
     @Override
     public double hitungPajak(double harga){
-        return harga=0.20;
+        return harga=0.03;
+        
     }
 }
