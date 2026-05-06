@@ -1,43 +1,50 @@
 
 
 public class makanan extends Produk {
-    private int expired;
-    public makanan(String nama, double harga, int stok, String Kategori, int expired) {
-        super(nama, harga, stok, Kategori);
-        this.expired = expired;
+    private String kedaluwarsa;
+    private String Kategori;
+    public makanan(String nama, double harga, int stok, String kedaluwarsa, String Kategori) {
+        super(nama, harga, stok);
+        this.kedaluwarsa = kedaluwarsa;
+        this.Kategori = Kategori;
+    }   
+
+    //membuat getter dan setter
+    public String getKedaluwarsa() {
+        return kedaluwarsa;
     }
-    // @Override
-    //abstrak + override adalah untuk bentuk yang berbeda dengan wajib menerapkan menggunakan method
-    public void tampilInfo(){
-        System.out.println("Makanan");
-        System.out.println("Produk  : " + getnama());
-        System.out.println("Kategori: " + Kategori);
-        System.out.println("Harga   : " + getharga());
-        System.out.println("Stok    : " + getstok());
-        System.out.println("---------------------");
-        System.out.println("Masa Expired:" + expired + "hari");
-    }
-    public void setExpired(int expired){
-        if(expired < 0) {
-            System.out.println("Masa Expired tidak boleh kurang dari 0");
-        } else{
-            this.expired = expired;
-        }
-    }
-    public void setExpired(int expired, String type){
-        if(type.equals("Nasi")){
-            if(expired > 4){
-                System.out.println("Sudah expired");
-            } else{
-                if(expired < 2) {
-                    System.out.println("Masa expired terlalu kecil");
-                }
-            }
-        }
+
+    public String getKategori() {
+        return Kategori;
     }
     @Override
+    //abstrak + override adalah untuk bentuk yang berbeda dengan wajib menerapkan menggunakan method
+    public void tampilInfo(){
+        System.out.println("[Makanan]");
+        System.out.println("Kategori: " + Kategori);
+        System.out.println("Kedaluwarsa : " + kedaluwarsa);
+        System.out.println("---------------------");
+    }
+    //Overloading hitungDiskon()
+    //1 - Diskon otomatis jika beli  >= 10
+    public double hitungDiskon(int jumlahBeli) {
+        if (jumlahBeli >= 10) 
+            return hitungTotalHarga(jumlahBeli) * 0.05;
+            return 0; 
+    }
+
+    //2 - diskon custom
+    public double hitungDiskon(int jumlahBeli, double persenDiskon) {
+        return hitungTotalHarga(jumlahBeli) * (persenDiskon / 100);
+    }
+
+    public double hitungHargaSetelahDiskon(int jumlahBeli) {
+        return hitungTotalHarga(jumlahBeli) - hitungDiskon(jumlahBeli);
+    }
+    
+    @Override
     public double hitungPajak(double harga){
-        return harga=0.02;
+        return harga=0.10;
 
     }
 }
