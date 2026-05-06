@@ -37,7 +37,7 @@ public class makanan extends Produk {
     }
     @Override
     public double hitungPajak(double harga){
-        return harga=0.03;
-        
+        return harga=0.02;
+
     }
 }
