@@ -41,7 +41,11 @@ public class elektronik extends Produk {
     }
 
     //2 - pajak custom
-    public double hitungDiskon(int jumlahBeli, double persenPajak){
+    public double hitungHaDiskon(int jumlahBeli, double persenPajak){
+        return hitungTotalHarga(jumlahBeli) * (persenPajak / 100);
+    }
+
+    public double hitungHargaSetelahPajak(int jumlahBeli) {
         return hitungTotalHarga(jumlahBeli) + hitungPajak(jumlahBeli);
     }
     @Override
