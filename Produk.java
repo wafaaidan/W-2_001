@@ -1,6 +1,6 @@
 
 
-public class Produk {
+abstract class Produk {
     private String nama;
     String Kategori;
     private double harga;
@@ -23,11 +23,9 @@ public class Produk {
         this.stok = stok;
     }
 
-    public void tampilInfo() {
-        System.out.println("Produk  : " + nama);
-        System.out.println("Kategori: " + Kategori);
-        System.out.println("Harga   : " + harga);
-        System.out.println("Stok    : " + stok);
-        System.out.println("---------------------");
-    }
+    public abstract void tampilInfo();
+
+    public abstract double hitungPajak(double harga);
+        
+    
 }

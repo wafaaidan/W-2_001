@@ -6,10 +6,12 @@ public class makanan extends Produk {
         super(nama, harga, stok, nama);
         this.expired = expired;
     }
-    @Override
+    // @Override
+    //abstrak + override adalah untuk bentuk yang berbeda dengan wajib menerapkan menggunakan method
     public void tampilInfo(){
         System.out.println("Makanan");
-        super.tampilInfo();
+        // super.tampilInfo();
+        System.out.println("---------------------");
         System.out.println("Masa Expired:" + expired + "hari");
     }
     public void setExpired(int expired){
@@ -29,5 +31,9 @@ public class makanan extends Produk {
                 }
             }
         }
+    }
+    @Override
+    public double hitungPajak(double harga){
+        return harga=0.20;
     }
 }
